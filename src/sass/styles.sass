@@ -1,42 +1,417 @@
+@import components/fonts
+    
 =media ($size)
     @media screen and ( min-width: #{$size}px )
         @content
+
+html
+    font-size: 1px
+    scroll-behavior: smooth
+
+*
+    margin: 0
+    padding: 0
 
 body
     margin: 0
 
 h1
+    display: inline-block
+    margin: 0
+    font: 600 48rem "Montserrat", sans-serif
+    text-transform: uppercase
     color: #fff
 
+h2
+    margin-bottom: 50rem
+    font: 400 20rem / 1.2em "Montserrat", sans-serif
+    text-transform: uppercase
+    color: #555
+
 .header
-    display: block
-    width: 100%
-    height: 100%
-    background: rgba(0, 0, 0, .8) url(../img/header_background.png)
+    padding-bottom: 260rem
+    background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(../img/startup-hero-bg.jpg) center / cover
+    // box-sizing: border-box
 
 .wrapper
     margin: 0 auto
-    max-width: 1054px
+    max-width: 1140rem
 
 .navigation
     display: flex
     justify-content: space-between
+    align-items: center
+    margin-bottom: 260rem
+    padding: 36rem 0
 
-    p
+.site_name a
+        margin: 0
+        text-decoration: none
         color: #fff
+        font: 700 24rem "Montserrat", sans-serif
 
 .menu
     display: flex
-    margin: 0
-    padding-left: 0
     list-style: none
+
+    li
+        margin-right: 35rem
+
+        &:last-child
+            margin-right: 0
 
     a
         color: #fff
         text-decoration: none
+        font: 400 14rem "Montserrat", sans-serif
 
 .header_section
     text-align: center
 
     p
+        margin: 14rem 0 48rem
         color: #fff
+        font: 400 19rem "Montserrat", sans-serif
+
+    a
+        display: inline-block
+        padding: 14rem 33rem
+        color: #fff
+        text-decoration: none
+        text-transform: uppercase
+        font: 400 16rem "Montserrat", sans-serif
+        border: 2rem solid #fff
+        border-radius: 2rem
+
+.main
+    overflow-x: hidden
+
+.our_offers
+    display: flex
+    flex-direction: column
+    padding: 100rem 0
+    opacity: 0
+    transform: translateX(100%)
+    transition: all 1.5s ease
+
+.our_offers.active
+    opacity: 1
+    transform: translateX(0)
+
+.block_header
+    position: relative
+    margin-bottom: 65rem
+    text-align: center
+
+    h2:before
+        position: absolute
+        content: ''
+        top: 50px
+        left: calc(50% - 25px)
+        width: 50rem
+        height: 2rem
+        background-color: #555
+
+    p
+        position: relative
+        font: 400 16rem / 1.5em "Roboto Slab", serif
+        color: #555
+
+.offers
+    display: flex
+    justify-content: center
+    column-gap: 30rem
+    text-align: center
+
+    figure
+        margin: 0
+        // border: 1rem solid #d7dbe8
+
+        &:hover .substrate
+            background-color: #c0301c
+
+        &:hover picture
+            filter: brightness(100)
+            transform: translate(-50%, -50%)
+
+    figcaption
+        display: flex
+        align-items: center
+        flex-direction: column
+    
+    b
+        display: block
+        margin: 25rem 0 20rem 0
+        font: 400 14rem/1.7em "Montserrat", sans-serif
+        text-align: center
+        text-transform: uppercase
+        color: #555
+
+.substrate
+    position: relative
+    display: block
+    width: 90rem
+    height: 90rem
+    border-radius: 45rem
+    border: 2px solid #ddd
+    transition: all .8s ease
+
+    picture
+        position: absolute
+        top: 50%
+        left: 50%
+        // background-color: #c0301c
+        transform: translate(-50%, -50%)
+
+.description
+    display: block
+    font: 400 16rem/1.7em  "Roboto Slab", serif
+    // font-family: "Roboto Slab";
+    text-align: center
+    color: #555
+
+.about_us
+    padding: 100rem 0
+    background-color: #f8f8f8
+    text-align: center
+
+.d-flex
+    display: flex
+    column-gap: 30rem
+    margin-bottom: 65rem
+    text-align: left
+    
+    p
+        width: 50%
+        font: 400 16rem/1.7em "Roboto Slab", serif
+        color: #555
+
+.slider
+    display: flex
+    column-gap: 30rem
+
+    img
+        margin-bottom: 15rem
+
+    b
+        display: block
+        font: 14rem/1.7em "Myriad Pro", sans-serif
+        text-transform: uppercase
+        color: #555
+
+    p
+        font: 400 13rem/1.6em "Roboto Slab", serif
+        color: #555
+
+.rewind
+    position: relative
+    // opacity: .2
+    width: 35px
+    height: 38px
+    background-color: #555
+
+    &::before
+        position: absolute
+        content: ''
+        top: calc(50% - 4px)
+        left: calc(50% - 4px)
+        width: 8rem
+        height: 8rem
+        border: 1px solid #ddd
+        border-top: none
+        border-right: none
+        transform: rotate(45deg)
+
+.works
+    padding: 100rem 0
+    transition: all 3s ease
+
+.filter_menu
+    display: flex
+    justify-content: center
+    list-style: none
+
+    li
+        margin-right: 35rem
+
+        &:last-child
+            margin-right: 0
+
+    a
+        font: 400 16rem/1.5 "Roboto Slab", serif
+        text-align: center
+        text-decoration: none
+        color: #555
+
+.work_cards
+    display: flex
+    justify-content: space-between
+    column-gap: 10rem
+    row-gap: 30rem
+    flex-wrap: wrap
+
+    img
+        margin-left: -38rem
+        width: 120%
+        height: 100vh
+        max-height: 320rem
+        object-fit: cover
+
+    figure
+        position: relative
+        width: 32%
+        max-width: 360rem
+        min-height: 320rem
+        max-height: 320rem
+        overflow: hidden
+
+        &:hover div
+            background-color: rgba(192, 48, 28, .7)
+            opacity: 1
+
+    div
+        position: absolute
+        padding-top: 100rem
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        text-align: center
+        transition: all .5s ease
+        opacity: 0
+
+        strong
+            font: 400 18rem/1.3em "Montserrat", sans-serif
+            color: #fff
+
+        p
+            margin: 6rem 0 20rem
+            font: 400 12rem/2em "Roboto Slab", serif
+            color: #fff
+
+        a
+            position: relative
+            // left: calc(50% - 50px)
+            display: inline-block
+            padding: 8rem 20rem
+            width: 60rem
+            font: 400 14rem/1.7em "Roboto Slab", serif
+            letter-spacing: 1px
+            text-align: left
+            text-decoration: none
+            text-transform: uppercase
+            color: #c0301c
+            background-color: #fff
+
+            &::before
+                position: absolute
+                content: ''
+                top: 15px
+                left: 70px
+                width: 7rem
+                height: 7rem
+                border: 1px solid #c0301c
+                border-top: none
+                border-right: none
+                transform: rotate(-134deg)
+
+.connection
+    // display: flex
+    // justify-content: center
+    padding: 93rem 0
+    background: linear-gradient(rgba(192, 48, 28, .8), rgba(192, 48, 28, .4)), url(../img/connection_background.jpg)
+    background-position-x: 17%
+    background-position-y: -80%
+    background-size: 100%
+    text-align: center
+
+    p
+        margin-bottom: 45rem
+        font: 400 30rem/1.46em "Roboto Slab", serif
+        color: #fff
+
+    a
+        display: inline-block
+        padding: 2rem 25rem
+        font: 400 18rem/2.4em "Roboto Slab", serif
+        text-align: center
+        text-decoration: none
+        text-transform: uppercase
+        color: #fff
+        border: 2px solid #fff
+        border-radius: 2px
+
+.blog
+    padding: 95rem 100rem
+
+.post
+    display: flex
+    column-gap: 40rem
+
+    a
+        letter-spacing: 1px
+        font: 600 13rem/1.8em "Roboto Slab", serif
+        text-align: center
+        text-decoration: none
+        text-transform: uppercase
+        color: #777
+
+        &:hover
+            color: #c0301c
+
+    &:hover span
+        color: #c0301c
+
+.figure
+    width: 40.5%
+    min-width: 460rem
+    min-height: 323rem
+    max-height: 323rem
+    overflow: hidden
+
+    img
+        margin-right: 40rem
+        margin-top: -16rem
+        margin-left: -21rem
+        width: 107%
+        height: 100vh
+        max-height: 336rem
+        object-fit: cover
+
+.post_header
+    display: flex
+    margin-bottom: 18rem
+
+    a
+        display: block
+        font: 600 16rem/1.5em "Montserrat", sans-serif
+        text-align: center
+        text-transform: uppercase
+        color: #555
+
+        &:hover
+            color: #c0301c
+
+
+.blog_date
+    padding: 13rem 18rem
+    margin-right: 25rem
+    letter-spacing: 2px
+    font: 700 24rem "Montserrat", sans-serif
+    text-align: center
+    text-transform: uppercase
+    color: #777
+    border: 2px solid #555
+
+.month
+    font: 700 12rem "Montserrat", sans-serif
+
+.author
+    font: italic 500 13rem/1.8em "Montserrat", sans-serif
+    color: #777
+
+.post_text
+    display: block
+    margin-bottom: 26rem
+    font: 400 14rem/1.7em "Roboto Slab", serif
+    color: #555

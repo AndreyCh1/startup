@@ -1,34 +1,101 @@
 doctype html
 html(lang="en")
     head
+        include components/mixins.pug
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0")
         link(rel="stylesheet", href="css/styles.css")
-        title Document
+        link(rel="apple-touch-icon", sizes="180x180", href="img/favicon/apple-touch-icon.png")
+        link(rel="icon", type="image/png", sizes="32x32", href="img/favicon/favicon-32x32.png")
+        link(rel="icon", type="image/png", sizes="16x16", href="img/favicon/favicon-16x16.png")
+        link(rel="manifest", href="img/favicon/site.webmanifest")
+        //- <link rel="preconnect" href="https://fonts.googleapis.com">
+        //- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        //- <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+        //- <link rel="preconnect" href="https://fonts.googleapis.com">
+        //- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        //- <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+        title Startup
     body 
         .header
             .wrapper
                 .navigation
-                    p Startup
+                    div.site_name
+                        a(href="#") Startup
                     nav
                         ul.menu
-                            li
-                                a(href="#") Home
-                            li
-                                a(href="#") Services
-                            li
-                                a(href="#") About
-                            li
-                                a(href="#") Works
-                            li
-                                a(href="#") Blog
-                            li
-                                a(href="#") Clients
-                            li
-                                a(href="#") Contact
+                            +menu(menu)
                 section.header_section
                     h1 welcome to startup
                     p Your Favourite Creative Agency Template
-                    .button
-                        a(href="#") Get Started
+                    a(href="#") Get Started
+        .main
+            .our_offers.wrapper#services
+                .block_header
+                    h2 services
+                    p We offer ipsum dolor sit amet, consetetur sadipscing elitr amet
+                .offers
+                    //- +figures(figures)
+                    +figures(figures.clean_typography)
+                    +figures(figures.rock_solid_code)
+                    +figures(figures.expert_support)
+            .about_us#about
+                .wrapper
+                    .block_header
+                        h2 About us
+                        p Lorem ipsum dolor sit amet, consetetur sadipscing elitr amet
+                    .d-flex
+                        p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sediam nonumy eirmod tempor invidunt ut labore et dolore aliquyam erat, sed diam voluptua. At vero eos et accusam et justo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor et dolore aliquyam erat. Lorem ipsum dolor sit amet. Lorem ipsum eat.
+                        p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sediam nonumy eirtempor invidunt ut labore et dolore aliquyam erat, sed diam voluptua. At vero eos eaccusam et justo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor et dolore aliquyam erat. Loreipsum dolor sit amet. Lorem ipsum dolor et.
+                    .slider
+                        +slider(slider.head_of_ideas)
+                        +slider(slider.lead_wordPress_developer)
+                        +slider(slider.sr_web_developer)
+                        +slider(slider.frontEnd_developer)
+                    //- .rewind // перемотка
+            .works#works
+                .wrapper
+                    .block_header
+                        h2 Latest Works
+                        nav 
+                            ul.filter_menu
+                                +filter_menu(filter_menu)
+                    .work_cards
+                        +work_cards(work_cards.latest_work_img1)
+                        +work_cards(work_cards.latest_work_img2)
+                        +work_cards(work_cards.latest_work_img3)
+                        +work_cards(work_cards.latest_work_img4)
+                        +work_cards(work_cards.latest_work_img5)
+                        +work_cards(work_cards.latest_work_img6)
+                        +work_cards(work_cards.latest_work_img7)
+                        +work_cards(work_cards.latest_work_img8)
+                        +work_cards(work_cards.latest_work_img9)
+            .connection
+                p Do you like OUR WORK so far?
+                    br
+                    |Let's talk about YOUR PROJECT!
+                a(href="#") Get in Touch
+            .blog#blog
+                .wrapper
+                    .block_header
+                        h2 Recent blog posts
+                        p Lorem ipsum dolor sit amet, consetetur sadipscing elitr amet
+                    .post 
+                        .figure
+                            picture 
+                                source(srcset="img/needs_funded.webp", type="img/webp")
+                                img(src="img/needs_funded.jpg", alt="")
+                        div
+                            .post_header 
+                                .blog_date
+                                    p 18
+                                    p.month OCT
+                                div 
+                                    a(href="#") Startup ideas needs to be funded 
+                                    p.author By 
+                                        span Khalil 
+                                        |Uddin in 
+                                        span Development
+                            p.post_text Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod teduntlabore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et erebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit am Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidulabore et dolore aliquyam erat, sed diam
+                            a(href="#") Read more
         script(src="js/script.js")

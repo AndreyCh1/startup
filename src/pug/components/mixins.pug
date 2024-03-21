@@ -1,0 +1,194 @@
+-
+    let menu = [
+        {
+            name: "Home",
+            url: "/"
+        },
+        {
+            name: "Services",
+            url: "#services"
+        },
+        {
+            name: "About",
+            url: "#about"
+        },
+        {
+            name: "Works",
+            url: "#works"
+        },
+        {
+            name: "Blog",
+            url: "#blog"
+        },
+        {
+            name: "Clients",
+            url: "#"
+        },
+        {
+            name: "Contact",
+            url: "#"
+        }
+    ]
+
+-
+    let figures = {
+        clean_typography: {
+            src: "img/clean_typography_icon",
+            alt: "clean_typography",
+            card_name: "Clean Typography",
+            //- price: "0",
+            description: [
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum."
+            ]
+        },
+        rock_solid_code: {
+            src: "img/rock_solid_code_icon",
+            alt: "rock_solid_code",
+            card_name: "Rock Solid Code",
+            //- price: "29",
+            description: [
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum."
+            ]
+        },
+        expert_support: {
+            src: "img/expert_support_icon",
+            alt: "expert_support",
+            card_name: "Expert Support",
+            description: [
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum."
+            ]
+        }
+    }
+
+-
+    let slider = {
+        head_of_ideas: {
+            src: "img/md._khalil_uddin",
+            alt: "md._khalil_uddin",
+            employee_name: "Md. Khalil Uddin",
+            job_title: "Head of Ideas"
+        },
+        lead_wordPress_developer: {
+            src: "img/rubel_miah",
+            alt: "rubel_miah",
+            employee_name: "Rubel Miah",
+            job_title: "Lead WordPress Developer"
+        },
+        sr_web_developer: {
+            src: "img/shamim_mia",
+            alt: "shamim_mia",
+            employee_name: "Shamim Mia",
+            job_title: "Sr. Web Developer"
+        },
+        frontEnd_developer: {
+            src: "img/john_doe",
+            alt: "john_doe",
+            employee_name: "John Doe",
+            job_title: "Front-end Developer"
+        }
+    }
+
+-
+    let filter_menu = [
+        {
+            name: "All",
+            url: "#"
+        },
+        {
+            name: "Branding",
+            url: "#"
+        },
+        {
+            name: "Design",
+            url: "#"
+        },
+        {
+            name: "Development",
+            url: "#"
+        },
+        {
+            name: "Strategy",
+            url: "#"
+        }
+    ]
+
+-
+    let work_cards = {
+        latest_work_img1: {
+            src: "img/latest_work_img1",
+            alt: "latest_work_img1"
+        },
+        latest_work_img2: {
+            src: "img/latest_work_img2",
+            alt: "latest_work_img2"
+        },
+        latest_work_img3: {
+            src: "img/latest_work_img3",
+            alt: "latest_work_img3"
+        },
+        latest_work_img4: {
+            src: "img/latest_work_img4",
+            alt: "latest_work_img4"
+        },
+        latest_work_img5: {
+            src: "img/latest_work_img5",
+            alt: "latest_work_img5"
+        },
+        latest_work_img6: {
+            src: "img/latest_work_img6",
+            alt: "latest_work_img6"
+        },
+        latest_work_img7: {
+            src: "img/latest_work_img7",
+            alt: "latest_work_img7"
+        },
+        latest_work_img8: {
+            src: "img/latest_work_img8",
+            alt: "latest_work_img8"
+        },
+        latest_work_img9: {
+            src: "img/latest_work_img9",
+            alt: "latest_work_img9"
+        }
+    }
+
+mixin menu (items)
+    for item in items
+        li
+            a(class=item.class, href=item.url) #{item.name}
+
+mixin figures (item)
+    figure
+        figcaption
+            .substrate
+                picture
+                    source(srcset=item.src + ".webp", type="img/webp")
+                    img(src=item.src + ".png", alt=item.alt)
+            b #{item.card_name}
+            p.description #{item.description}
+
+mixin slider (item)
+    figure
+        figcaption
+            picture
+                source(srcset=item.src + ".webp", type="img/webp")
+                img(src=item.src + ".jpg", alt=item.alt)
+            b #{item.employee_name}
+            p #{item.job_title}
+
+mixin filter_menu (items)
+    for item in items
+        li
+            a(href=item.url) #{item.name}
+
+mixin work_cards (item)
+    figure 
+        figcaption 
+            //- a(href="#") 
+            div
+                strong Hair Dresser
+                p Branding
+                a(href="#") View
+            picture
+                source(srcset=item.src + ".webp", type="img/webp")
+                img(src=item.src + ".jpg", alt=item.alt)
