@@ -22,7 +22,7 @@
         },
         {
             name: "Clients",
-            url: "#"
+            url: "#clients"
         },
         {
             name: "Contact",
@@ -152,6 +152,64 @@
         }
     }
 
+-
+    let posts = {
+        needs_funded: {
+            src: "img/needs_funded",
+            alt: "needs_funded",
+            day_month: "18",
+            month: "OCT",
+            post_name: "Startup ideas needs to be funded",
+            first_name: "Khalil",
+            last_name: "Uddin",
+            chapter: "Development",
+            post: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod teduntlabore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et erebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit am Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidulabore et dolore aliquyam erat, sed diam"
+        },
+        designing_elements: {
+            src: "img/latest_work_img8",
+            alt: "needs_funded",
+            day_month: "18",
+            month: "OCT",
+            post_name: "User Interface Designing Elements",
+            first_name: "Khalil",
+            last_name: "Uddin",
+            chapter: "Development",
+            post: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod teduntlabore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et erebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor idunt ut labore et dolore aliquyam"
+        }
+    }
+
+-
+    let clients_logos = {
+        deorham: {
+            src: "img/deorham",
+            alt: "deorham"
+        },
+        ratings: {
+            src: "img/ratings",
+            alt: "ratings"
+        },
+        malik_media: {
+            src: "img/malik_media",
+            alt: "malik_media"
+        },
+        bcause: {
+            src: "img/bcause",
+            alt: "bcause"
+        },
+        womgify: {
+            src: "img/womgify",
+            alt: "womgify"
+        }
+    }
+
+-
+    let quote_slider = {
+        some_quote: {
+            quote: "Hvaing placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum”",
+            author: "John Doe, Google Inc."
+        }
+    }
+
 mixin menu (items)
     for item in items
         li
@@ -192,3 +250,33 @@ mixin work_cards (item)
             picture
                 source(srcset=item.src + ".webp", type="img/webp")
                 img(src=item.src + ".jpg", alt=item.alt)
+
+mixin posts (item)
+    .post
+        figure
+            figcaption 
+                picture 
+                    source(srcset=item.src + ".webp", type="img/webp")
+                    img(src=item.src + ".jpg", alt=item.alt)
+        div
+            .post_header 
+                .blog_date
+                    p #{item.day_month}
+                    p.month #{item.month}
+                div 
+                    a(href="#") #{item.post_name}
+                    p.author By 
+                        span #{item.first_name} 
+                        |#{item.last_name} in 
+                        span #{item.chapter}
+            p.post_text #{item.post}
+            a(href="#") Read more
+
+mixin clients_logos (item)
+    picture
+        source(srcset=item.src + ".webp", type="img/webp")
+        img(src=item.src + ".png", alt=item.alt)
+
+mixin quote_slider (item)
+    blockquote #{item.quote}
+    p #{item.author}

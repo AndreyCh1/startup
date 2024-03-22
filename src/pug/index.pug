@@ -80,22 +80,21 @@ html(lang="en")
                     .block_header
                         h2 Recent blog posts
                         p Lorem ipsum dolor sit amet, consetetur sadipscing elitr amet
-                    .post 
-                        .figure
-                            picture 
-                                source(srcset="img/needs_funded.webp", type="img/webp")
-                                img(src="img/needs_funded.jpg", alt="")
+                    +posts(posts.needs_funded)
+                    hr
+                    +posts(posts.designing_elements)
+            .clients#clients
+                .wrapper
+                    .clients_logos
+                        +clients_logos(clients_logos.deorham)
+                        +clients_logos(clients_logos.ratings)
+                        +clients_logos(clients_logos.malik_media)
+                        +clients_logos(clients_logos.bcause)
+                        +clients_logos(clients_logos.womgify)
+                    .quote 
+                        +quote_slider(quote_slider.some_quote)
                         div
-                            .post_header 
-                                .blog_date
-                                    p 18
-                                    p.month OCT
-                                div 
-                                    a(href="#") Startup ideas needs to be funded 
-                                    p.author By 
-                                        span Khalil 
-                                        |Uddin in 
-                                        span Development
-                            p.post_text Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod teduntlabore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et erebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit am Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidulabore et dolore aliquyam erat, sed diam
-                            a(href="#") Read more
+                            span
+                            span
+                            span
         script(src="js/script.js")

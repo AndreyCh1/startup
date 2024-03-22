@@ -28,6 +28,10 @@ h2
     text-transform: uppercase
     color: #555
 
+hr
+    margin: 38rem 0
+    background-color: #ddd
+
 .header
     padding-bottom: 260rem
     background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url(../img/startup-hero-bg.jpg) center / cover
@@ -316,8 +320,6 @@ h2
                 transform: rotate(-134deg)
 
 .connection
-    // display: flex
-    // justify-content: center
     padding: 93rem 0
     background: linear-gradient(rgba(192, 48, 28, .8), rgba(192, 48, 28, .4)), url(../img/connection_background.jpg)
     background-position-x: 17%
@@ -348,6 +350,22 @@ h2
     display: flex
     column-gap: 40rem
 
+    figure
+        width: 40.5%
+        min-width: 460rem
+        min-height: 323rem
+        max-height: 323rem
+        overflow: hidden
+
+        img
+            margin-right: 40rem
+            margin-top: -16rem
+            margin-left: -21rem
+            width: 107%
+            height: 100vh
+            max-height: 336rem
+            object-fit: cover
+
     a
         letter-spacing: 1px
         font: 600 13rem/1.8em "Roboto Slab", serif
@@ -361,22 +379,6 @@ h2
 
     &:hover span
         color: #c0301c
-
-.figure
-    width: 40.5%
-    min-width: 460rem
-    min-height: 323rem
-    max-height: 323rem
-    overflow: hidden
-
-    img
-        margin-right: 40rem
-        margin-top: -16rem
-        margin-left: -21rem
-        width: 107%
-        height: 100vh
-        max-height: 336rem
-        object-fit: cover
 
 .post_header
     display: flex
@@ -415,3 +417,59 @@ h2
     margin-bottom: 26rem
     font: 400 14rem/1.7em "Roboto Slab", serif
     color: #555
+
+.clients
+    padding: 100rem 0
+    background-color: #f8f8f8
+
+.clients_logos
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-bottom: 60rem
+
+    picture
+        margin-right: 65rem
+
+        &:last-child
+            margin-right: 0
+
+.quote
+
+    blockquote
+        margin: auto
+        margin-bottom: 30rem
+        max-width: 790rem
+        font: italic 400 18rem/1.6em "Roboto Slab", serif
+        text-align: center
+        color: #555
+
+    p
+        margin-bottom: 37rem
+        font: 400 19rem/1.5em "Roboto Slab", serif
+        text-align: center
+        color: #555
+
+    div
+        position: relative
+        margin: auto
+        width: 53px
+        height: 13px
+        text-align: center
+        // border: 1px solid #000
+
+        span
+            position: absolute
+            left: calc(50% - 6.5px)
+            width: 13rem
+            height: 13rem
+            border-radius: 6px
+            background-color: #ddd
+            // background-color: #c0301c
+
+            &:first-child
+                left: 0
+
+            &:last-child
+                left: calc(100% - 13px)
+
