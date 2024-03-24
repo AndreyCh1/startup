@@ -97,4 +97,68 @@ html(lang="en")
                             span
                             span
                             span
+            .contacts_and_connection#contact
+                .wrapper
+                    .block_header
+                            h2 Get in touch
+                            p Lorem ipsum dolor sit amet, consetetur sadipscing elitr amet
+                    .flex_between 
+                        .contacts
+                            div 
+                                svg.addres_icon
+                                    use(xlink:href="#addres")
+                                div 
+                                    h3 Address
+                                    p 312, 7th Ave, New York
+                                    p NY 101200, United States of America
+                            div
+                                svg.hotline_icon
+                                    use(xlink:href="#hotline")
+                                div 
+                                    h3 Hotline (24x7)
+                                    p +65 0052 300, +65 88251 210
+                                    p +88 01723 511 340
+                            div
+                                svg.e-mail_icon
+                                    use(xlink:href="#e-mail")
+                                div 
+                                    h3 E-mail
+                                    p shapedtheme@gmail.com
+                                    p khalilkode@gmail.com
+                        form(action="", method="") 
+                            table 
+                                tbody 
+                                    tr
+                                        td.w50p 
+                                            input(type="text", class="text_field", placeholder="Your name")
+                                        td.w50p 
+                                            input(type="email", class="text_field", placeholder="Your E-mail")
+                                    tr 
+                                        td.w50p 
+                                            input(type="text", class="text_field", placeholder="Your subject")
+                                        td.w50p 
+                                            input(type="text", class="text_field", placeholder="Company name")
+                                    tr 
+                                        td(colspan="2")
+                                            textarea(class="text_field", name="", id="", cols="30", rows="10", placeholder="Write your message") 
+                            .input_flex 
+                                input(type="submit", value="Send message")
+                                span *&nbsp
+                                p We’ll contact you as as possible. We don’t reply on Monday.
+            .footer 
+                .social_networks
+                    a(href="#")
+                        svg.tw_icon
+                            use(xlink:href="#tw")
+                    a(href="#")
+                        svg.tw_icon
+                            use(xlink:href="#tw")
+                    a(href="#")
+                        svg.tw_icon
+                            use(xlink:href="#tw")
+                    a(href="#")
+                        svg.tw_icon
+                            use(xlink:href="#tw")
+                p © 2015 Startup, Designed by ShapedTheme
+        include ../img/svg_sprite/sprite.svg
         script(src="js/script.js")

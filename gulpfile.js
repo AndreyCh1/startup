@@ -12,7 +12,6 @@ import cache from "gulp-cache"
 import gcmq from "gulp-group-css-media-queries"
 import cleanCSS from "gulp-clean-css"
 import svgo from "gulp-svgo"
-import changedInPlace from 'gulp-changed-in-place'
 
 const sass = gulpSass(coreSass)
 
@@ -100,12 +99,23 @@ export const fonts = () => {
     }))
 }
 
+export const images = () => {
+    return gulp
+    .src([
+        "src/img/**/*",
+    ])
+    .pipe(cache(imagemin()))
+    .pipe(gulp.dest("docs/img"))
+    .pipe(browserSync.reload({
+        stream: true
+    }))
+}
+
 export const svgSprite = () => {
     return gulp
     .src([
         "src/img/svg_sprite/uncompressed/*.svg"
     ])
-    .pipe(changedInPlace({ firstPass: false }))
     .pipe(svgo({
         plugins: [
             { removeUselessDefs: false },
@@ -118,17 +128,8 @@ export const svgSprite = () => {
     }))
 }
 
-export const images = () => {
-    return gulp
-    .src([
-        "src/img/**/*",
-        "!src/img/svg_sprite/**",
-    ])
-    .pipe(cache(imagemin()))
-    .pipe(gulp.dest("docs/img"))
-    .pipe(browserSync.reload({
-        stream: true
-    }))
+export const delSvgFolder = () => {
+    return del("docs/img/svg_sprite")
 }
 
 export const clear = () => {
@@ -146,6 +147,7 @@ export const watch = () => {
     gulp.watch("src/*.*", gulp.parallel (files))
     gulp.watch("src/fonts/**/*.*", gulp.parallel (fonts))
     gulp.watch("src/img/**/*.*", gulp.parallel (images))
+    gulp.watch("src/img/svg_sprite/uncompressed/*.svg", gulp.parallel (svgSprite))
 }
 
 export default gulp.series(
@@ -159,6 +161,7 @@ export default gulp.series(
         js,
         files,
         fonts,
+        delSvgFolder,
         browserSyncFunc
     )
 )
